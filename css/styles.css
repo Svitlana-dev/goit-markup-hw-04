@@ -81,7 +81,7 @@ img {
 }
 
 .nav-link {
-  display: block;
+  display: flex;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -89,6 +89,8 @@ img {
   text-decoration: none;
   padding: 24px 0;
   color: #2e2f42;
+  position: relative;
+  display: inline-block;
 }
 
 .nav-link:hover,
@@ -96,8 +98,17 @@ img {
   color: #404bbf;
 }
 
-.nav-link:active {
-  text-decoration: underline;
+.nav-link:active::after,
+.nav-link.active::after {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  height: 4px;
+  background: #404bbf;
+  position: absolute;
+  bottom: -2px;
 }
 
 .add {
@@ -142,6 +153,15 @@ img {
   background: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office\ 1.jpg);
 }
 
 .main-button {
@@ -198,6 +218,19 @@ img {
   margin-bottom: 8px;
 }
 
+.ben-icons {
+  background: #f4f4fd;
+  text-align: center;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin-bottom: 8px;
+  padding: 24px 0;
+}
+
 .ben-info {
   width: calc((100% - 72px) / 4);
 }
@@ -211,7 +244,6 @@ img {
 
 .team {
   background-color: #f4f4fd;
-  height: 732px;
   padding: 120px 0;
 }
 
@@ -241,7 +273,7 @@ img {
 }
 
 .team-info {
-  padding: 32px 0;
+  padding-top: 32px;
 }
 
 .team-list-title {
@@ -260,7 +292,30 @@ img {
   letter-spacing: 0.02em;
   text-align: center;
   color: #434455;
-  width: 264px;
+  margin-bottom: 8px;
+}
+
+.team-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 24px;
+  padding-bottom: 32px;
+}
+
+.team-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
+
+.team-link:hover {
+  background: #404bbf;
 }
 
 .portf-title {
@@ -301,10 +356,46 @@ img {
   border-left: 1px solid #e7e9fc;
   border-right: 1px solid #e7e9fc;
   padding: 32px 16px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
 }
 
 .portf-info {
   width: calc((100% - 48px) / 3);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.portf-info:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.portf-img {
+  display: inline-block;
+  position: relative;
+}
+
+.overlay {
+  padding: 40px 32px;
+  background: #4d5ae5;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms ease-in-out;
+  z-index: 1;
+}
+
+.portf-info:hover .overlay {
+  transform: translateY(0);
 }
 
 .portf-text {
@@ -317,9 +408,6 @@ img {
 .foot {
   background: #2e2f42;
   height: 312px;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: left;
   padding: 100px 0;
 }
 
@@ -347,4 +435,43 @@ img {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   width: 264px;
+}
+
+.foot-list {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+
+.foot-right-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  align-self: baseline;
+}
+
+.foot-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 16px;
+  padding-bottom: 32px;
+}
+
+.foot-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
+
+.foot-link:hover {
+  background: #31d0aa;
 }
