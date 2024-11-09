@@ -224,7 +224,6 @@ img {
 
 .ben-icons {
   background: #f4f4fd;
-  text-align: center;
   border: 1px solid #8e8f99;
   border-radius: 4px;
   display: flex;
@@ -302,7 +301,6 @@ img {
 
 .team-icons {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: row;
   gap: 24px;
@@ -476,9 +474,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
   gap: 16px;
   padding-bottom: 32px;
+  fill: currentColor;
 }
 
 .foot-link {
@@ -489,6 +487,7 @@ img {
   height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
+  color: #f4f4fd;
 }
 
 .foot-link:hover {
